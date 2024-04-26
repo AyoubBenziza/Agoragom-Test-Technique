@@ -1,9 +1,9 @@
 # Gestionnaire de Tâches Full-Stack (React & Node.js)
 
-Bonjour et bienvenue dans votre défi technique ! 😀  
+Bonjour et bienvenue dans le défi technique d'Agoragom !   
 Vous devez créer une application full-stack avec **React** pour le frontend et **Node.js** pour le backend qui permettra la **gestion de tâches**.
 
-## 📝 Instructions
+##  Instructions
 
 > Les deux parties de l'application sont pré-configurées pour vous aider à démarrer rapidement.  
 > Vous pouvez les trouver dans les dossiers `my-tasks-frontend` et `my-tasks-backend`.  
@@ -13,7 +13,7 @@ Vous devez créer une application full-stack avec **React** pour le frontend et 
 2. **Cloner** le fork sur votre machine locale.
 
 ```bash
-git clone https://github.com/Pexilo/Agoragom-Test-Technique.git
+git clone https://github.com/VOTRE_COMPTE_GITHUB/Agoragom-Test-Technique.git
 ```
 
 3. **Installer** les dépendances des projets `my-tasks-frontend` et `my-tasks-backend`.
@@ -32,9 +32,9 @@ npm install
 npm run dev
 ```
 
-## 📚 Étapes à suivre
+##  Étapes à suivre
 
-### 🧙‍♂️ Backend (Node.js)
+###  Backend (Node.js)
 
 1. Créez un serveur **Node.js** avec **Express**.
 2. Définissez une route `GET /api/tasks` qui retournera la liste de toutes les tâches.
@@ -42,7 +42,7 @@ npm run dev
 4. Stockez les données des tâches dans un fichier **JSON**.
 5. Utiliser des codes de statut **HTTP** appropriés pour chaque réponse.
 
-> 💡 Une tâche est constitué de deux champs
+>  Une tâche est constitué de deux champs
 >
 > ```js
 > {
@@ -51,7 +51,7 @@ npm run dev
 > }
 > ```
 
-> 💡 Pour stocker les données des tâches dans un fichier JSON, Utilisez [writeFileSync](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options) et [readFileSync](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
+>  Pour stocker les données des tâches dans un fichier JSON, Utilisez [writeFileSync](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options) et [readFileSync](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 >
 > ```json
 > exemple de ficher JSON
