@@ -32,6 +32,8 @@ npm install
 npm run dev
 ```
 
+> Note: il sera peut être nécessaire d'installer nodemon sur votre machine si vous ne l'avais jamais utilisé pour `my-tasks-backend`, installez la dépendance comme ceci `npm i -g nodemon`.
+
 ##  Étapes à suivre
 
 ###  Backend (Node.js)
@@ -67,7 +69,7 @@ npm run dev
 > ]
 > ```
 
-### 🎨 Frontend (React)
+###  Frontend (React)
 
 1. Créez un composant `TaskList` qui affichera la liste des tâches.
 2. Au chargement du composant, récupérez les données des tâches depuis `backend` en utilisant une requête `GET`.
@@ -75,11 +77,11 @@ npm run dev
 4. Ajoutez un formulaire permettant de créer une nouvelle tâche en saisissant son titre.
 5. Lors de l'envoi du formulaire, utiliser une requête `POST` à `backend` avec les données de la nouvelle tâche.
 
-#### 🧮 Structure de base des projets
+####  Structure de base des projets
 
 ```plaintext
-📦my-tasks-frontend
-  ┣ 📂src
+my-tasks-frontend
+  ┣ src
   ┃ ┣ 📂assets
   ┃ ┣ 📂components
   ┃ ┣ 📂styles
