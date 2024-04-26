@@ -56,7 +56,7 @@ npm run dev
 >  Pour stocker les données des tâches dans un fichier JSON, Utilisez [writeFileSync](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options) et [readFileSync](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 >
 > ```json
-> exemple de ficher JSON
+> exemple de fichier JSON
 > [
 >  {
 >    "id": 1,
@@ -82,20 +82,20 @@ npm run dev
 ```plaintext
 my-tasks-frontend
   ┣ src
-  ┃ ┣ 📂assets
-  ┃ ┣ 📂components
-  ┃ ┣ 📂styles
-  ┗ ┗ 📜main.jsx
-📦my-tasks-backend
-  ┣ 📂src
-  ┃ ┣ 📂data
-  ┃ ┃ ┗ 📜tasks.json
-  ┗ ┗ 📜server.js
+  ┃ ┣ assets
+  ┃ ┣ components
+  ┃ ┣ styles
+  ┗ ┗ main.jsx
+my-tasks-backend
+  ┣ src
+  ┃ ┣ data
+  ┃ ┃ ┗ tasks.json
+  ┗ ┗ server.js
 ```
 
 Libre à vous de changer la structure des projets si vous le souhaitez.
 
-### 🌟 Bonus
+###  Bonus
 
 - Une attention particulière à l'UI/UX.
 - Finissez le `CRUD` en définissant:  
