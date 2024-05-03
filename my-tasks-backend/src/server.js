@@ -1,7 +1,16 @@
 // Imports
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 8080;
+
+// CORS
+const corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 // Parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }));

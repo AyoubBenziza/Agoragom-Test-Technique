@@ -7,6 +7,8 @@ export default defineConfig({
   resolve: {
     alias: {
       src: "/src",
+      // alias for css files
+      styles: "/src/styles",
     },
   },
 });

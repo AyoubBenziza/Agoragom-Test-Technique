@@ -62,6 +62,9 @@ const editTask = (req, res) => {
     // Return an error if property title missing
     if (!title) throw new Error("Property title is not defined");
     const index = db.findIndex((task) => task.id === parseInt(id));
+    if (index === -1) {
+      throw new Error("Task not found");
+    }
     const task = { id, title };
     db[index] = task;
     updateDatabase();
@@ -77,7 +80,9 @@ const editTask = (req, res) => {
 const deleteTask = (req, res) => {
   try {
     const index = db.findIndex((task) => task.id === parseInt(req.params.id));
-    console.log(index);
+    if (index === -1) {
+      throw new Error("Task not found");
+    }
     db.splice(index, 1);
     updateDatabase();
     res.status(200).send("Task deleted");
