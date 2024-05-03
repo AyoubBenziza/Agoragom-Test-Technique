@@ -1,0 +1,11 @@
+.sectionTask {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.returnButton {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(113, 124, 129);
+}

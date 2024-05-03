@@ -44,7 +44,7 @@ const createTask = async (task) => {
 //----------------- PUT -------------------//
 const editTask = async (id, task) => {
   try {
-    return fetch(url, {
+    return fetch(url + `/${id}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
