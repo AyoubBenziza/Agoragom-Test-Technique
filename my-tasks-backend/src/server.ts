@@ -1,12 +1,12 @@
 // Imports
-const express = require("express");
-const cors = require("cors");
+import express, { Request, Response } from "express";
+import cors, { CorsOptions } from "cors";
 const app = express();
-const port = 8080;
+const port: number = 8080;
 
 // CORS
 // Specify which url can access the API
-const corsOptions = {
+const corsOptions: CorsOptions = {
   origin: "http://localhost:3000",
   optionsSuccessStatus: 200,
 };
@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Routers Modules
-const taskRouter = require("./router/taskRouter");
+import taskRouter from "./router/taskRouter.js";
 
-app.get("/api/ping", (_req, res) => {
+app.get("/api/ping", (_req: Request, res: Response) => {
   res.send("🏓 Pong!");
 });
 
@@ -29,7 +29,9 @@ app.get("/api/ping", (_req, res) => {
 app.use("/api/tasks", taskRouter);
 
 // Handling all bad addresses
-app.get("*", (req, res) => res.status(404).send("Page No Found"));
+app.get("*", (req: Request, res: Response) =>
+  res.status(404).send("Page No Found")
+);
 
 app.listen(port, () => {
   console.log(`🌐 App started http://localhost:${port}/api/ping`);

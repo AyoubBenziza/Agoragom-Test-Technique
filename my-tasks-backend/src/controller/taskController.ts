@@ -1,35 +1,35 @@
 // Imports
-const path = require("path");
-const fs = require("fs");
-const db = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "../data/", "tasks.json"))
-);
+import { Request, Response } from "express";
+import { writeFileSync } from "fs";
+
+// Database
+import db from "../data/tasks.json" with { type: "json" };
+import Task from "../interface/Task";
+
 
 // Update Database
-const updateDatabase = () =>
-  fs.writeFileSync(
-    path.join(__dirname, "../data/", "tasks.json"),
-    JSON.stringify(db)
-  );
+const updateDatabase = () => {
+  writeFileSync("./src/data/tasks.json", JSON.stringify(db));
+};
 
 //-------------- CRUD --------------//
 
 //-------------- GET --------------//
 // List of All Tasks
-const getAllTasks = (req, res) => {
+const getAllTasks = (req: Request, res: Response) => {
   try {
     res.status(200).json(db);
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).send(err.message);
   }
 };
 
 // Details of a Task
-const getTask = (req, res) => {
+const getTask = (req: Request, res: Response) => {
   try {
     const task = db.find((task) => task.id === parseInt(req.params.id));
     res.status(200).json(task);
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).send(err.message);
   }
 };
@@ -37,17 +37,17 @@ const getTask = (req, res) => {
 
 //-------------- POST --------------//
 // Create a new Task
-const createTask = (req, res) => {
+const createTask = (req: Request, res: Response) => {
   try {
-    const id = db.length + 1;
+    const id: number = db.length + 1;
     const { title } = req.body;
     // Return an error if property title missing
     if (!title) throw new Error("Property title is not defined");
-    const task = { id, title };
+    const task:Task = { id, title };
     db.push(task);
     updateDatabase();
     res.status(201).send("New task created");
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).send(err.message);
   }
 };
@@ -55,21 +55,21 @@ const createTask = (req, res) => {
 
 //-------------- PUT --------------//
 // Edit a Task
-const editTask = (req, res) => {
+const editTask = (req: Request, res: Response) => {
   try {
-    const id = parseInt(req.params.id);
+    const id: number = parseInt(req.params.id);
     const { title } = req.body;
     // Return an error if property title missing
     if (!title) throw new Error("Property title is not defined");
-    const index = db.findIndex((task) => task.id === parseInt(id));
+    const index: number = db.findIndex((task) => task.id === id);
     if (index === -1) {
       throw new Error("Task not found");
     }
-    const task = { id, title };
+    const task:Task = { id, title };
     db[index] = task;
     updateDatabase();
     res.status(201).send(task);
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).send(err.message);
   }
 };
@@ -77,16 +77,16 @@ const editTask = (req, res) => {
 
 //-------------- DELETE --------------//
 // Delete a Task
-const deleteTask = (req, res) => {
+const deleteTask = (req: Request, res: Response) => {
   try {
-    const index = db.findIndex((task) => task.id === parseInt(req.params.id));
+    const index: number = db.findIndex((task) => task.id === parseInt(req.params.id));
     if (index === -1) {
       throw new Error("Task not found");
     }
     db.splice(index, 1);
     updateDatabase();
     res.status(200).send("Task deleted");
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).send(err.message);
   }
 };
@@ -95,4 +95,5 @@ const deleteTask = (req, res) => {
 //-------------- CRUD --------------//
 
 // Exports
-module.exports = { getAllTasks, getTask, createTask, editTask, deleteTask };
+export { createTask, deleteTask, editTask, getAllTasks, getTask };
+
