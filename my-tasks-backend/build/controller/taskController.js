@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
-import db from "../data/tasks.json" with { type: "json" };
+import db from "../../data/tasks.json" with { type: "json" };
 const updateDatabase = () => {
-    writeFileSync("./src/data/tasks.json", JSON.stringify(db));
+    writeFileSync("./data/tasks.json", JSON.stringify(db));
 };
 const getAllTasks = (req, res) => {
     try {

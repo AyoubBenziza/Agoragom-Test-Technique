@@ -5,8 +5,8 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "start": "npx tsc && node src/build/server.js",
-    "dev": "nodemon src/build/server.js"
+    "start": "npx tsc && node build/server.js",
+    "dev": "nodemon build/server.js"
   },
   "keywords": [],
   "author": "",

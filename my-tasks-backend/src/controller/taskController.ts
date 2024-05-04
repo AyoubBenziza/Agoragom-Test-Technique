@@ -3,13 +3,13 @@ import { Request, Response } from "express";
 import { writeFileSync } from "fs";
 
 // Database
-import db from "../data/tasks.json" with { type: "json" };
+import db from "../../data/tasks.json" with { type: "json" };
 import Task from "../interface/Task";
 
 
 // Update Database
 const updateDatabase = () => {
-  writeFileSync("./src/data/tasks.json", JSON.stringify(db));
+  writeFileSync("./data/tasks.json", JSON.stringify(db));
 };
 
 //-------------- CRUD --------------//
