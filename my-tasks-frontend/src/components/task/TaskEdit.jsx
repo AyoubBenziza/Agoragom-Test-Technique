@@ -9,12 +9,7 @@ const TaskEdit = () => {
   return (
     <section className={styles.sectionEdit}>
       <h1>Edit</h1>
-      <Form
-        method="post"
-        id="formTask"
-        className={styles.formTask}
-        onSubmit={() => {}}
-      >
+      <Form method="post" id="formTask" className={styles.formTask}>
         <input
           className={styles.inputTask}
           name="title"

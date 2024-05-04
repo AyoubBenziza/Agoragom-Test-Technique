@@ -16,7 +16,6 @@ const TaskList = () => {
         action={"create"}
         id="formTask"
         className={styles.formTask}
-        onSubmit={() => {}}
       >
         <input className={styles.inputTask} name="title" />
         <button type="submit" className={styles.addButton}>
