@@ -5,8 +5,9 @@ const app = express();
 const port = 8080;
 
 // CORS
+// Specify which url can access the API
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:3000",
   optionsSuccessStatus: 200,
 };
 
