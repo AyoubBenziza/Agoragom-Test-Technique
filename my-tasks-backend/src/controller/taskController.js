@@ -61,7 +61,7 @@ const editTask = (req, res) => {
     const { title } = req.body;
     // Return an error if property title missing
     if (!title) throw new Error("Property title is not defined");
-    const index = db.findIndex((task) => task.id === parseInt(id));
+    const index = db.findIndex((task) => task.id === id);
     if (index === -1) {
       throw new Error("Task not found");
     }
